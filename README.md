@@ -30,7 +30,7 @@ Ho però effettuato delle modifiche rispetto alla maschera originale: ho deciso 
 naso e sopracciglia ed aggiungere capelli e occhi. In particolare occhi e capelli sono stati 
 essenziali per aumentare la differenza caratteriale nei due stati emotivi della marionetta.
 
-
+[<img src="img_readme/groucho_glasses.jpg" width="500" alt="Magic trick">]()
 https://user-images.githubusercontent.com/6561331/236182302-68a6bd12-7b83-4d19-b83e-c9b7db795881.mp4
 
 
