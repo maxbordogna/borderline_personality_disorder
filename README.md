@@ -31,7 +31,9 @@ naso e sopracciglia ed aggiungere capelli e occhi. In particolare occhi e capell
 essenziali per aumentare la differenza caratteriale nei due stati emotivi della marionetta.
 
 [<img src="img_readme/groucho_glasses.jpg" width="150" alt="Groucho glasses">]()
-Groucho glasses <br>
+<br>
+Groucho glasses 
+<br>
 https://user-images.githubusercontent.com/6561331/236182302-68a6bd12-7b83-4d19-b83e-c9b7db795881.mp4
 
 
