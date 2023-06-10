@@ -47,9 +47,9 @@ alterato, che si contraddistingue da una bocca aperta, gli occhiali rotti, i cap
 (con diversi spessori) e gli occhi rotanti con un bordo seghettato. Inoltre è stato introdotto l’effetto 
 sonoro di un urlo che aumenta l’efficacia comunicativa dello stato della marionetta.
 
-[<img src="img_readme/stato_base.jpg" width="100" alt="Groucho glasses">]()[<img src="img_readme/stato_1.jpg" width="100" alt="Groucho glasses">]()[<img src="img_readme/stato_2.jpg" width="100" alt="Groucho glasses">]()
+[<img src="img_readme/stato_base.png" width="100" alt="Groucho glasses">]()[<img src="img_readme/stato_1.png" width="100" alt="Groucho glasses">]()[<img src="img_readme/stato_2.png" width="100" alt="Groucho glasses">]()
 <br>
-<i>Groucho glasses </i>
+<i>Stati: base, tranquillo e pazzo </i>
 <br>
 
 
