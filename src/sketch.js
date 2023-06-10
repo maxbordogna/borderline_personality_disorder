@@ -6,7 +6,6 @@ let angle = 0
 let camice
 
 
-
 //Progetto_disturbo_personalità
 
 
@@ -33,13 +32,15 @@ let mass = 2.0;
 	 camice = loadImage("img/face2.png")
 	 mustache2 = loadImage("img/baffo2.png")
 	 pizzetto = loadImage("img/pizzetto.png")
+	 glasses = loadImage("img/glasses.png")
+	 brokenglasses = loadImage("img/brokenglasses.png")
 }
 
 async function setup() {
 	// mySound = loadSound ("car-pass-by-9111.mp3")
 	// mySound = loadSound ("car-pass-by-9111.mp3")
 	//createCanvas(640*3, 480*2, WEBGL)
-	createCanvas(windowWidth, windowHeight, WEBGL)
+	createCanvas(windowWidth, windowHeight)
 	capture = createCapture(VIDEO)
 	capture.size(640, 480)
 	capture.hide()
@@ -167,6 +168,15 @@ function Spring3D(xpos, ypos, m, g) {
 	}
   }
 
+function occhiali (gx, gy){
+	image(glasses, gx, gy, 738/2.5, 360/2.5);
+
+}
+
+function occhialirotti (gx, gy){
+	image(brokenglasses, gx, gy, 738/2.5, 360/2.5);
+
+}
 
 function eyeDx(sx, sy) {
 	 image(glassesDx, sx-70, sy-70, 140, 140);
@@ -188,22 +198,22 @@ function eyeRottiSx(sx, sy) {
 }
 
 function pupillaFermaSx(pfSxX, pfSxY) {
-	let varX = map (pfSxX, 0, 640, -20, +50)
+	let varX = map (pfSxX, 0, 640, -20, +20)
     let varY = map (pfSxY, 0, 480, -20, +20)
 
 
 	noStroke()
 	fill(0)
-	ellipse (pfSxX + varX, pfSxY + varY, 45, 45)
+	ellipse (pfSxX + varX, pfSxY + varY, 35, 35)
 
 }
 
 function pupillaFermaDx(pfDxX, pfDxY){
-	let varX = map (pfDxX, 0, 640, -50, +20)
+	let varX = map (pfDxX, 0, 640, -20, +20)
     let varY = map (pfDxY, 0, 480, -20, +20)
 	noStroke()
 	fill(0)
-	ellipse (pfDxX + varX, pfDxY + varY, 45, 45)
+	ellipse (pfDxX + varX, pfDxY + varY, 35, 35)
 }
 
 function pupillePazze (ppSxX, ppSxY, ppDxX, ppDxY) {
@@ -211,27 +221,39 @@ function pupillePazze (ppSxX, ppSxY, ppDxX, ppDxY) {
 	translate(ppSxX, ppSxY)
 	fill(0)
 	rotate (angle)
-	ellipse(20, 0, 30, 30)
+	ellipse(10, -10, 35, 35)
 	pop()
 	push()
 	translate(ppDxX, ppDxY)
 	fill(0)
 	rotate (-angle)
-	ellipse(20, 0, 30, 30)
+	ellipse(10, -10, 35, 35)
 	pop()
 	angle = angle + 40
 }
 
 async function draw() {
-	translate(-width/2+width/10, -height/2)
-	scale(min(windowWidth/640, windowHeight/480))
-	//mostra la webcam
-	// push()
-	// scale(-1, 1)
-	// image(capture, -640, 0)
-	// pop()
+	//translate(-width/2+width/10, -height/2)
+	if(windowWidth > windowHeight && (windowWidth > (windowHeight * 1.33))){
+		translate((windowWidth - (windowHeight * 1.33))/2, 0)
 
-	background(255)
+	}
+
+	scale(min(windowWidth/640, windowHeight/480))
+	
+	
+
+	
+	
+	//mostra la webcam
+	push()
+	scale(-1, 1)
+
+	image(capture, -640, 0)
+	pop()
+
+	background(255,255,255,220)
+	
 	//translate(-320, -240)
 	// noStroke()
 	// fill(255, 10)
@@ -292,10 +314,13 @@ async function draw() {
 				const p = hand.keypoints[4]
 				const k = hand.keypoints[20]
 				
+				const d = dist(k.x, k.y, p.x, p.y)
+
 				// ellipse(k.x, k.y, 20, 20)
 				// ellipse(p.x, p.y, 20, 20)
 
-				if (((((k.x - p.x) < 100) && (k.x - p.x) > -100) && ((k.y - p.y) < 100) && (k.y - p.y) > -100)) {
+				//if (((((k.x - p.x) < 100) && (k.x - p.x) > -100) && ((k.y - p.y) < 100) && (k.y - p.y) > -100)) {
+				if (d < 100) {
 					
 
 					
@@ -319,22 +344,26 @@ async function draw() {
 						// 	// endShape(CLOSE);
 						// 	pop()
 
-						strokeWeight(min(windowWidth/25, windowHeight/25))
-						stroke(0)
-						line(l.x+17, l.y, r.x-17, r.y)
+						//strokeWeight(min(windowWidth/25, windowHeight/25))
+						//stroke(0)
+						//line(l.x+17, l.y, r.x-17, r.y)
 
-						eyeSx(l.x - 50, l.y)
-						eyeDx(r.x + 50, r.y)
+						occhiali(f.x-((738/2.5)/2), f.y-((360/2.5)/2))
+
+						// eyeSx(l.x - 50, l.y)
+						// eyeDx(r.x + 50, r.y)
 
 						
 
-						pupillaFermaSx(l.x - 50, l.y)
-						pupillaFermaDx(r.x + 50, r.y)
+						pupillaFermaSx(f.x - 50, f.y)
+						pupillaFermaDx(f.x + 50, f.y)
 						
 
 
-						image(pizzetto, l.x+10, l.y+120, 112/2, 304/2)
-						image(mustache, l.x-60, l.y+50, 792/4, 242/4)
+						//image(pizzetto, l.x+10, l.y+120, 112/2, 304/2)
+						
+						image(mustache, f.x-((792/4)/2), f.y-((242/4)/2-75)-10, 792/4, 242/4)
+
 						//image(mustache2, l.x-60, l.y+50, 383, 115)
 						
 						// strokeWeight(5)
@@ -348,7 +377,7 @@ async function draw() {
 
 						const v = 30
 						
-						translate (-28, -100) 
+						translate (-45, -90) 
 						colore()
 						s1.update(f.x, f.y-v);
 						s1.display(f.x, f.y);
@@ -392,8 +421,8 @@ async function draw() {
 						s20.update(s19.x, s9.y-v);
 						s20.display(s19.x, s9.y);
 						} 
-						
-						translate (28, 100) 
+						translate (45, 90) 
+
 
 						
 						
@@ -428,7 +457,7 @@ async function draw() {
 
 					for (let i=0; i<1; i++) {
 						
-							background(random(230, 255))
+							background((random(150, 255)),(random(150, 255)),(random(150, 255)),150)
 							
 							// push()
 							// noFill()
@@ -444,24 +473,26 @@ async function draw() {
 							// // endShape(CLOSE);
 							// pop()
 
-							strokeWeight(min(windowWidth/25, windowHeight/25))
-							stroke(0)
-							line(l.x+17, l.y, r.x-17, r.y)
-							eyeRottiSx(l.x - 50, l.y)
-							eyeRottiDx(r.x + 50, r.y)
+							//strokeWeight(min(windowWidth/25, windowHeight/25))
+							//stroke(0)
+							//line(l.x+17, l.y, r.x-17, r.y)
+							// eyeRottiSx(l.x - 50, l.y)
+							// eyeRottiDx(r.x + 50, r.y)
 							
-							pupillePazze (l.x- 40, l.y, r.x+ 40, r.y)
+							occhialirotti(f.x-((738/2.5)/2), f.y-((360/2.5)/2))
+							noStroke();
+							pupillePazze (f.x- 50, f.y, f.x+ 50, f.y)
 
-							image(pizzetto, l.x+10, l.y+160, 112/2, 304/2)
-							image(mouth, l.x-30, l.y+80, 150, 150)
-							image(mustache, l.x-60, l.y+50, 792/4, 242/4)
+							//image(pizzetto, l.x+10, l.y+160, 112/2, 304/2)
+							image(mouth, f.x-150/2, f.y-150/2+135, 150, 150)
+							image(mustache, f.x-((792/4)/2), f.y-((242/4)/2-75)-10, 792/4, 242/4)
 
 						
 							
 	
-							const v = 35
+							const v = 25
 						
-						translate (-28, -75)
+						translate (-45, -90)
 						s21.update(f.x-30, f.y-v+10);
 						s21.display(f.x, f.y);
 						s22.update(s21.x-30, s21.y-v+10);
@@ -504,7 +535,7 @@ async function draw() {
 						s40.update(s39.x+30, s39.y-v-10);
 						s40.display(s39.x, s39.y);
 						}
-						translate (28, 75)
+						translate (45, 90)
 
 						
 					

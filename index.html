@@ -3,7 +3,9 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
 		<title>Disturbo Personalità</title>
-		
+		<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 		<script src="https://unpkg.com/@tensorflow/tfjs-core@3.7.0/dist/tf-core.min.js"></script>
 		<script src="https://unpkg.com/@tensorflow/tfjs-backend-webgl@3.7.0/dist/tf-backend-webgl.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/hand-pose-detection@2.0.0/dist/hand-pose-detection.min.js"></script>
@@ -14,10 +16,12 @@
 		
 
 		<style>
-			* {
+			*{
 				box-sizing: border-box;
 				user-select: none;
 			}
+
+
 			html,
 			body {
 				height: 100%;
@@ -26,8 +30,90 @@
 				width: 100%;
 				margin: 0;
 				padding: 0;
-				background-color: lightgray;
+				font-family: 'Roboto Mono', monospace;
+				font-weight: 100;
+				/*background-color: lightgray;*/
 			}
+
+			.footerintro {
+				padding-left:10px;
+				font-size: 12px;
+				font-weight: 400;
+				line-height: 1.2;
+				position: fixed;
+				padding-bottom: 10px;
+				padding-top: 10px;
+				bottom: 0; 
+				width: 100%;
+
+}
+			footer {
+				display: grid;
+
+				grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+				font-weight: 400;
+
+				font-weight: 100;
+				line-height: 1.2;
+				background-color: white;
+
+
+}
+
+.s2 {
+	grid-column: span 2;
+}
+
+.s3 {
+	grid-column: span 3;
+}
+
+.s4 {
+	grid-column: span 4;
+}
+
+.s5 {
+	grid-column: span 5;
+}
+
+.s6 {
+	grid-column: span 6;
+}
+
+.s7 {
+	grid-column: span 7;
+}
+
+.s8 {
+	grid-column: span 8;
+}
+
+.s9 {
+	grid-column: span 9;
+}
+
+.s10 {
+	grid-column: span 10;
+}
+
+a:link {
+	text-decoration: none;
+	color: black;
+}
+
+a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+a:hover {
+	text-decoration: none;
+	color: black;
+	font-weight: 900;
+
+}
+
+
 			.container {
 				margin: 20px 20px;
 				position: relative;
@@ -49,5 +135,30 @@
 	<body>		
 		<script src="src/sketch.js"></script>
 		<script src="lib/addons/p5.sound.js"></script>
+		<footer class="footerintro">
+
+			
+	
+			
+			
+			
+		<div class="s3">
+			Elaborato 2 <br>
+			<a href="https://ixd-supsi.github.io/2023/progetti/2_antologia_a_due_mani/">Antologia a due mani<br> </a>
+			Il conteggio con le mani <br>
+		</div>
+
+
+		<div class="s3">
+			CV2<br>
+			Massimo Bordogna <br>
+			SUPSI DACD Mendrisio <br>
+		</div>
+		<div class="s3">
+			CV 427.01 Interaction Design <br>
+			Andreas Gysin <br>
+			Giovanni Profeta <br>
+		</div>
+		</footer>
 	</body>
 </html>
