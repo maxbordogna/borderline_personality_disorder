@@ -34,7 +34,7 @@ essenziali per aumentare la differenza caratteriale nei due stati emotivi della 
 <br>
 <i>Groucho glasses </i>
 <br>
-https://user-images.githubusercontent.com/6561331/236182302-68a6bd12-7b83-4d19-b83e-c9b7db795881.mp4
+
 
 
 ## Design dell’interfraccia e modalià di interazione
@@ -63,26 +63,15 @@ effettuare attorno al keypoint di riferimento.
 
 
 ```JavaScript
-const image = new Image();
-image.onload = () => {
-	gl.bindTexture(gl.TEXTURE_2D, texture);
-	gl.texImage2D(
-		gl.TEXTURE_2D,
-		level,
-		internalFormat,
-		srcFormat,
-		srcType,
-		image
-	);
-	if (isPowerOf2(image.width) && isPowerOf2(image.height)) {
-		gl.generateMipmap(gl.TEXTURE_2D);
-	} else {
-		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-		gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-	}
-};
-image.src = url;
+//funzione occhi mappati
+function pupillaFermaSx(pfSxX, pfSxY) {
+	let varX = map (pfSxX, 0, 640, -20, +20)
+    let varY = map (pfSxY, 0, 480, -20, +20)
+
+	noStroke()
+	fill(0)
+	ellipse (pfSxX + varX, pfSxY + varY, 35, 35)
+}
 ```
 
 ## Target e contesto d’uso
