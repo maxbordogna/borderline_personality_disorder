@@ -47,7 +47,10 @@ alterato, che si contraddistingue da una bocca aperta, gli occhiali rotti, i cap
 (con diversi spessori) e gli occhi rotanti con un bordo seghettato. Inoltre è stato introdotto l’effetto 
 sonoro di un urlo che aumenta l’efficacia comunicativa dello stato della marionetta.
 
-[<img src="doc/cards.gif" width="500" alt="Magic trick">]()
+[<img src="img_readme/groucho_glasses.jpg" width="150" alt="Groucho glasses">]()
+<br>
+<i>Groucho glasses </i>
+<br>
 
 
 ## Tecnologia usata
@@ -74,7 +77,8 @@ function pupillaFermaSx(pfSxX, pfSxY) {
 }
 
 //----------------------------------------------
-//esempio p5js utilizzato per i capelli
+//esempio p5js modificato ed utilizzato per i capelli
+//il codice realmente utilizzato è eccessivamente lungo per essere inserito
 let s1, s2;
 let gravity = 9.0;
 let mass = 2.0;

@@ -201,11 +201,9 @@ function pupillaFermaSx(pfSxX, pfSxY) {
 	let varX = map (pfSxX, 0, 640, -20, +20)
     let varY = map (pfSxY, 0, 480, -20, +20)
 
-
 	noStroke()
 	fill(0)
 	ellipse (pfSxX + varX, pfSxY + varY, 35, 35)
-
 }
 
 function pupillaFermaDx(pfDxX, pfDxY){
