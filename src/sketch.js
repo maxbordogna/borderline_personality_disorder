@@ -34,6 +34,7 @@ let mass = 2.0;
 	 pizzetto = loadImage("img/pizzetto.png")
 	 glasses = loadImage("img/glasses.png")
 	 brokenglasses = loadImage("img/brokenglasses.png")
+	 istruzioni = loadImage("img/istruzioni.png")
 }
 
 async function setup() {
@@ -130,7 +131,7 @@ function Spring2D(xpos, ypos, m, g) {
     //ellipse(this.x, this.y, this.radius * 2, this.radius * 2);
 	fill(0)
 	stroke(0)
-    strokeWeight(random(1, 25))
+    strokeWeight(random(1, 10))
     line(this.x, this.y, nx, ny);
   }
 }
@@ -169,12 +170,12 @@ function Spring3D(xpos, ypos, m, g) {
   }
 
 function occhiali (gx, gy){
-	image(glasses, gx, gy, 738/2.5, 360/2.5);
+	image(glasses, gx, gy, 738/4, 360/4);
 
 }
 
 function occhialirotti (gx, gy){
-	image(brokenglasses, gx, gy, 738/2.5, 360/2.5);
+	image(brokenglasses, gx, gy, 738/4, 360/4);
 
 }
 
@@ -198,20 +199,20 @@ function eyeRottiSx(sx, sy) {
 }
 
 function pupillaFermaSx(pfSxX, pfSxY) {
-	let varX = map (pfSxX, 0, 640, -20, +20)
-    let varY = map (pfSxY, 0, 480, -20, +20)
+	let varX = map (pfSxX, 0, 640, -15, +15)
+    let varY = map (pfSxY, 0, 480, -15, +15)
 
 	noStroke()
 	fill(0)
-	ellipse (pfSxX + varX, pfSxY + varY, 35, 35)
+	ellipse (pfSxX + varX, pfSxY + varY, 20, 20)
 }
 
 function pupillaFermaDx(pfDxX, pfDxY){
-	let varX = map (pfDxX, 0, 640, -20, +20)
-    let varY = map (pfDxY, 0, 480, -20, +20)
+	let varX = map (pfDxX, 0, 640, -15, +15)
+    let varY = map (pfDxY, 0, 480, -15, +15)
 	noStroke()
 	fill(0)
-	ellipse (pfDxX + varX, pfDxY + varY, 35, 35)
+	ellipse (pfDxX + varX, pfDxY + varY, 20, 20)
 }
 
 function pupillePazze (ppSxX, ppSxY, ppDxX, ppDxY) {
@@ -219,25 +220,33 @@ function pupillePazze (ppSxX, ppSxY, ppDxX, ppDxY) {
 	translate(ppSxX, ppSxY)
 	fill(0)
 	rotate (angle)
-	ellipse(10, -10, 35, 35)
+	ellipse(7, -7, 20, 20)
 	pop()
 	push()
 	translate(ppDxX, ppDxY)
 	fill(0)
 	rotate (-angle)
-	ellipse(10, -10, 35, 35)
+	ellipse(7, -7, 20, 20)
 	pop()
 	angle = angle + 40
 }
 
 async function draw() {
-	//translate(-width/2+width/10, -height/2)
-	if(windowWidth > windowHeight && (windowWidth > (windowHeight * 1.33))){
-		translate((windowWidth - (windowHeight * 1.33))/2, 0)
+	//-----------//translate(-width/2+width/10, -height/2)
+	// if(windowWidth > windowHeight && (windowWidth > (windowHeight * 1.33))){
+	// 	translate((windowWidth - (windowHeight * 1.33))/2, 0)
 
-	}
+	// }
 
-	scale(min(windowWidth/640, windowHeight/480))
+	// scale(min(windowWidth/640, windowHeight/480))
+
+	// if(windowWidth > windowHeight && (windowWidth > (windowHeight * 1.33))){
+	// 	translate((windowWidth - (windowHeight * 1.33))/2, 0)
+
+	// }
+
+	translate (0, -windowHeight/5)
+	scale(max(windowWidth/640, windowHeight/480))
 	
 	
 
@@ -277,7 +286,7 @@ async function draw() {
 		// dopo si indicano i vertici collegati alle dita con vertex
 		// poi si chiude con endShape() o qualcos del genere
 		// si può applicare una texture alla shape 
-
+if (hands.length >0){
 		for (let j=0; j<hands.length; j++) {
 			const hand = hands[j]
 			const handedness = hand.handedness // Left : Right
@@ -346,21 +355,21 @@ async function draw() {
 						//stroke(0)
 						//line(l.x+17, l.y, r.x-17, r.y)
 
-						occhiali(f.x-((738/2.5)/2), f.y-((360/2.5)/2))
+						occhiali(f.x-((738/2.5)/3), f.y-((360/2.5)/3))
 
 						// eyeSx(l.x - 50, l.y)
 						// eyeDx(r.x + 50, r.y)
 
 						
 
-						pupillaFermaSx(f.x - 50, f.y)
-						pupillaFermaDx(f.x + 50, f.y)
+						pupillaFermaSx(f.x - 40, f.y)
+						pupillaFermaDx(f.x + 25, f.y)
 						
 
 
 						//image(pizzetto, l.x+10, l.y+120, 112/2, 304/2)
 						
-						image(mustache, f.x-((792/4)/2), f.y-((242/4)/2-75)-10, 792/4, 242/4)
+						image(mustache, f.x-((792/4)/2.75), f.y-((242/3)/2-75)-10, 792/6, 242/6)
 
 						//image(mustache2, l.x-60, l.y+50, 383, 115)
 						
@@ -373,9 +382,9 @@ async function draw() {
 
 						//lunghezza capelli
 
-						const v = 30
+						const v = 35
 						
-						translate (-45, -90) 
+						translate (-50, -65) 
 						colore()
 						s1.update(f.x, f.y-v);
 						s1.display(f.x, f.y);
@@ -419,7 +428,7 @@ async function draw() {
 						s20.update(s19.x, s9.y-v);
 						s20.display(s19.x, s9.y);
 						} 
-						translate (45, 90) 
+						translate (50, 65) 
 
 
 						
@@ -477,20 +486,20 @@ async function draw() {
 							// eyeRottiSx(l.x - 50, l.y)
 							// eyeRottiDx(r.x + 50, r.y)
 							
-							occhialirotti(f.x-((738/2.5)/2), f.y-((360/2.5)/2))
+							occhialirotti(f.x-((738/2.5)/3), f.y-((360/2.5)/3))
 							noStroke();
-							pupillePazze (f.x- 50, f.y, f.x+ 50, f.y)
+							pupillePazze (f.x- 40, f.y-2.5, f.x+ 30, f.y-2.5)
 
 							//image(pizzetto, l.x+10, l.y+160, 112/2, 304/2)
-							image(mouth, f.x-150/2, f.y-150/2+135, 150, 150)
-							image(mustache, f.x-((792/4)/2), f.y-((242/4)/2-75)-10, 792/4, 242/4)
+							image(mouth, f.x-150/2.75, f.y-150/2+120, 100, 100)
+							image(mustache, f.x-((792/4)/2.75), f.y-((242/3)/2-75)-10, 792/6, 242/6)
 
 						
 							
 	
-							const v = 25
+							const v = 5
 						
-						translate (-45, -90)
+						translate (-50, -65)
 						s21.update(f.x-30, f.y-v+10);
 						s21.display(f.x, f.y);
 						s22.update(s21.x-30, s21.y-v+10);
@@ -533,7 +542,7 @@ async function draw() {
 						s40.update(s39.x+30, s39.y-v-10);
 						s40.display(s39.x, s39.y);
 						}
-						translate (45, 90)
+						translate (50, 65)
 
 						
 					
@@ -548,6 +557,11 @@ async function draw() {
 				
 				}
 			}
+		}
+		else{
+			//background(255, 255, 0)
+			image(istruzioni, 0, 25, 1920/3, 1080/3)
+		}
 //----------------------------------------------------//
 
 
