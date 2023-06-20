@@ -39,7 +39,8 @@ essenziali per aumentare la differenza caratteriale nei due stati emotivi della 
 
 ## Design dell’interfraccia e modalià di interazione
 All’apertura della pagina uno sfondo bianco tinta unita leggermente trasparente è sovrapposto all'immagine 
-registrata dalla webcam del computer. Nel momento in cui la mano destra chiusa viene inquadrata 
+registrata dalla webcam del computer. Una scritta centrale informa l'utente sull'azione da effettuare "Alza una mano con il pugno chiuso".
+Nel momento in cui una mano chiusa viene inquadrata 
 attraverso la webcam, compare la marionetta nel suo stato base. Essa segue i movimenti della mano indirizzando 
 gli occhi verso l’esterno del canvas, i capelli hanno uno stato che ne simula la fisicità attraverso peso 
 e gravità. Nel momento in cui l’utente apre la mano, la marionetta cambia da stato base a stato 
