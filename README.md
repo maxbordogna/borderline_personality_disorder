@@ -1,4 +1,4 @@
-x§SUPSI 2022-23  
+SUPSI 2022-23  
 Corso d’interaction design, CV427.01  
 Docenti: A. Gysin, G. Profeta  
 
