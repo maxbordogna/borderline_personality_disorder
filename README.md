@@ -141,4 +141,3 @@ o un’esposizione in cui i visitatori possono provare allo stand di riferimento
 Oppure potrebbe essere utilizzata all’interno di un sito web come interazione con l’utente stuzzicandone 
 l’interesse e creando un legame di interazione attiva.
 
-[<img src="doc/munari.jpg" width="300" alt="Supplemento al dizionario italiano">]()
