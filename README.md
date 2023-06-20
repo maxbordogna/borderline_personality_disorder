@@ -67,6 +67,7 @@ effettuare attorno al keypoint di riferimento.
 
 
 ```JavaScript
+//----------------------------------------------------------
 //funzione occhi mappati
 function pupillaFermaSx(pfSxX, pfSxY) {
 	let varX = map (pfSxX, 0, 640, -20, +20)
@@ -77,7 +78,7 @@ function pupillaFermaSx(pfSxX, pfSxY) {
 	ellipse (pfSxX + varX, pfSxY + varY, 35, 35)
 }
 
-//----------------------------------------------
+//----------------------------------------------------------
 //esempio p5js modificato ed utilizzato per i capelli
 //il codice realmente utilizzato è eccessivamente lungo per essere inserito
 let s1, s2;
