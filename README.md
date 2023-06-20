@@ -8,6 +8,7 @@ Elaborato 1: Marionetta digitale
 Autore: Massimo Bordogna  
 [MediaPipe demo-ES6](https://ixd-supsi.github.io/2023/esempi/mp_hands/es6/1_landmarks)
 
+https://www.youtube.com/watch?v=2qUxWKn60Q8
 
 ## Introduzione e tema
 La consegna consisteva nel progettare un sistema di interfaccia per generare una marionetta in 
