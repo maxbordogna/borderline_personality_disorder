@@ -46,14 +46,14 @@ registrata dalla webcam del computer. Una scritta centrale informa l'utente sull
 Nel momento in cui una mano chiusa viene inquadrata 
 attraverso la webcam, compare la marionetta nel suo stato base. Essa segue i movimenti della mano indirizzando 
 gli occhi verso l’esterno del canvas, i capelli hanno uno stato che ne simula la fisicità attraverso peso 
-e gravità. Nel momento in cui l’utente apre la mano, la marionetta cambia da stato base a stato 
+e gravità. Nel momento in cui l’utente apre la mano, la marionetta cambia da stato pacato a stato 
 alterato, che si contraddistingue da una bocca aperta, gli occhiali rotti, i capelli allungati verso l’alto 
 (con diversi spessori) e gli occhi rotanti con un bordo seghettato. Inoltre è stato introdotto l’effetto 
 sonoro di un urlo che aumenta l’efficacia comunicativa dello stato della marionetta.
 
 [<img src="img_readme/stato_base.png" width="200" alt="Groucho glasses">]()[<img src="img_readme/stato_1.png" width="200" alt="Groucho glasses">]()[<img src="img_readme/stato_2.png" width="200" alt="Groucho glasses">]()
 <br>
-<i>Stati: base, tranquillo e pazzo </i>
+<i>Stati: base, pacato e alterato </i>
 <br>
 
 
