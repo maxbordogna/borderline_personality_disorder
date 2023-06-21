@@ -141,7 +141,8 @@ function Spring2D(xpos, ypos, m, g) {
 Non avendo costruito l’elaborato pensando in anticipo ad un target e ad un contesto specifico è 
 difficile individuarne uno perfettamente calzante. Ovviamente andrebbe quindi adeguato al suo utilizzo 
 finale, potrei però vedere la marionetta applicata ad un contesto espositivo quale magari una fiera 
-o un’esposizione in cui i visitatori possono provare allo stand di riferimento la marionetta. 
+o un’esposizione in cui i visitatori possono provare allo stand di riferimento i nuovi sistemi di riconoscimento
+del corpo attraverso il machine learning, in questo caso potrebbe essere MediaPipe attraverso la marionetta. 
 Oppure potrebbe essere utilizzata all’interno di un sito web come interazione con l’utente stuzzicandone 
 l’interesse e creando un legame di interazione attiva.
 
