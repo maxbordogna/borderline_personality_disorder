@@ -8,7 +8,7 @@ Elaborato 1: Marionetta digitale
 Autore: Massimo Bordogna  
 [MediaPipe demo-ES6](https://ixd-supsi.github.io/2023/esempi/mp_hands/es6/1_landmarks)
 
-Breve video dimostrativo
+Download breve video dimostrativo
 https://github.com/maxbordogna/borderline_personality_disorder/blob/main/img_readme/Disturbo_Personalità_2.mp4
 
 
