@@ -46,24 +46,19 @@ registrata dalla webcam del computer. Una scritta centrale informa l'utente sull
 Nel momento in cui una mano chiusa viene inquadrata 
 attraverso la webcam, compare la marionetta nel suo stato base. Essa segue i movimenti della mano indirizzando 
 gli occhi verso l’esterno del canvas, i capelli hanno uno stato che ne simula la fisicità attraverso peso 
-e gravità. Nel momento in cui l’utente apre la mano, la marionetta cambia da stato base a stato 
+e gravità. Nel momento in cui l’utente apre la mano, la marionetta cambia da stato pacato a stato 
 alterato, che si contraddistingue da una bocca aperta, gli occhiali rotti, i capelli allungati verso l’alto 
 (con diversi spessori) e gli occhi rotanti con un bordo seghettato. Inoltre è stato introdotto l’effetto 
-sonoro di un urlo che aumenta l’efficacia comunicativa dello stato della marionetta.
+sonoro di un urlo che aumenta l’efficacia comunicativa dello stato della marionetta. In aggiunta, lo stato alterato presenta anche
+un cambiamento random del colore dello sfondo.
 
 [<img src="img_readme/stato_base.png" width="200" alt="Groucho glasses">]()[<img src="img_readme/stato_1.png" width="200" alt="Groucho glasses">]()[<img src="img_readme/stato_2.png" width="200" alt="Groucho glasses">]()
 <br>
-<i>Stati: base, tranquillo e pazzo </i>
+<i>Stati: base, pacato e alterato </i>
 <br>
 
 
 ## Tecnologia usata
-Per la simulazione della fisicità dei capelli è stato utilizzato l’esempio sul sito di p5js chiamato “Chain”, 
-codice che collega più elementi attraverso la loro posizione imitando una catena e 
-determinandone lo stato attraverso una simulazione della gravità e del peso. Questo esempio è 
-stato modificato ed implementato all’interno del mio codice ottenendo dei capelli che seguono 
-la posizione della mano e che cambiano lunghezza, peso e gravità a dipendenza dello stato (umore) della marionetta.
-
 Il movimento degli occhi nello stato base è ottenuto attraverso la funzione map che mi ha permesso 
 di mappare la larghezza e l’altezza del canvas nello spostamento massimo che le pupille possono 
 effettuare attorno al keypoint di riferimento.
@@ -74,13 +69,19 @@ effettuare attorno al keypoint di riferimento.
 //funzione occhi mappati
 function pupillaFermaSx(pfSxX, pfSxY) {
 	let varX = map (pfSxX, 0, 640, -20, +20)
-    let varY = map (pfSxY, 0, 480, -20, +20)
+  	let varY = map (pfSxY, 0, 480, -20, +20)
 
 	noStroke()
 	fill(0)
 	ellipse (pfSxX + varX, pfSxY + varY, 35, 35)
 }
-
+```
+Per la simulazione della fisicità dei capelli è stato utilizzato l’esempio sul sito di p5js chiamato “Chain”, 
+codice che collega più elementi attraverso la loro posizione imitando una catena e 
+determinandone lo stato attraverso una simulazione della gravità e del peso. Questo esempio è 
+stato modificato ed implementato all’interno del mio codice ottenendo dei capelli che seguono 
+la posizione della mano e che cambiano lunghezza, peso e gravità a dipendenza dello stato (umore) della marionetta.
+```JavaScript
 //----------------------------------------------------------
 //esempio p5js modificato ed utilizzato per i capelli
 //il codice realmente utilizzato è eccessivamente lungo per essere inserito
@@ -140,7 +141,8 @@ function Spring2D(xpos, ypos, m, g) {
 Non avendo costruito l’elaborato pensando in anticipo ad un target e ad un contesto specifico è 
 difficile individuarne uno perfettamente calzante. Ovviamente andrebbe quindi adeguato al suo utilizzo 
 finale, potrei però vedere la marionetta applicata ad un contesto espositivo quale magari una fiera 
-o un’esposizione in cui i visitatori possono provare allo stand di riferimento la marionetta. 
+o un’esposizione in cui i visitatori possono provare allo stand di riferimento i nuovi sistemi di riconoscimento
+del corpo, in questo caso potrebbe essere lo stand di MediaPipe sfruttando la marionetta. 
 Oppure potrebbe essere utilizzata all’interno di un sito web come interazione con l’utente stuzzicandone 
 l’interesse e creando un legame di interazione attiva.
 
