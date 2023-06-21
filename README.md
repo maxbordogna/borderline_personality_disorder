@@ -59,12 +59,6 @@ un cambiamento random del colore dello sfondo.
 
 
 ## Tecnologia usata
-Per la simulazione della fisicità dei capelli è stato utilizzato l’esempio sul sito di p5js chiamato “Chain”, 
-codice che collega più elementi attraverso la loro posizione imitando una catena e 
-determinandone lo stato attraverso una simulazione della gravità e del peso. Questo esempio è 
-stato modificato ed implementato all’interno del mio codice ottenendo dei capelli che seguono 
-la posizione della mano e che cambiano lunghezza, peso e gravità a dipendenza dello stato (umore) della marionetta.
-
 Il movimento degli occhi nello stato base è ottenuto attraverso la funzione map che mi ha permesso 
 di mappare la larghezza e l’altezza del canvas nello spostamento massimo che le pupille possono 
 effettuare attorno al keypoint di riferimento.
@@ -81,7 +75,13 @@ function pupillaFermaSx(pfSxX, pfSxY) {
 	fill(0)
 	ellipse (pfSxX + varX, pfSxY + varY, 35, 35)
 }
-
+```
+Per la simulazione della fisicità dei capelli è stato utilizzato l’esempio sul sito di p5js chiamato “Chain”, 
+codice che collega più elementi attraverso la loro posizione imitando una catena e 
+determinandone lo stato attraverso una simulazione della gravità e del peso. Questo esempio è 
+stato modificato ed implementato all’interno del mio codice ottenendo dei capelli che seguono 
+la posizione della mano e che cambiano lunghezza, peso e gravità a dipendenza dello stato (umore) della marionetta.
+```JavaScript
 //----------------------------------------------------------
 //esempio p5js modificato ed utilizzato per i capelli
 //il codice realmente utilizzato è eccessivamente lungo per essere inserito
